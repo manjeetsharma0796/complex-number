@@ -1,5 +1,5 @@
-const extractReal = function() {
-  return true;
+const extractReal = function(real, imaginary) {
+  return real;
 };
 
 exports.extractReal = extractReal;

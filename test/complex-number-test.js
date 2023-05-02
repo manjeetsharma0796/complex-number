@@ -5,7 +5,7 @@ const {strictEqual} = require('assert');
 describe("Testing complex-number", function() {
   describe("Testiing extractReal", function() {
     it("Should give real part", function() {
-      strictEqual(extractReal(true), true);
-    })
-  })
-})
+      strictEqual(extractReal(2, '3i'), 2);
+    });
+  });
+});
