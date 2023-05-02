@@ -14,4 +14,11 @@ describe("Testing complex-number", function() {
       strictEqual(number.imaginary(), 3);
     });
   });
+  describe("Testing Add", function() {
+    it("Should add two complex numbers", function() {
+      const num1 = complexNumber(1, 2);
+      const num2 = complexNumber(3, 5);
+      strictEqual(num1.add(num1, num2), '4 + 7i');
+    })
+  })
 });

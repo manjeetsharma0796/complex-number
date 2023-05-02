@@ -6,8 +6,14 @@ const complexNumber = function(real, imaginary) {
   const extractImaginary = function() {
     return numbers.imaginary;
   };
+  const add = function(num1, num2) {
+    const realSum = num1.real() + num2.real();
+    const imaginarySum = num1.imaginary() + num2.imaginary();
 
-  return {real: extractReal, imaginary: extractImaginary};
+    return `${realSum} + ${imaginarySum}i`;
+  };
+
+  return {real: extractReal, imaginary: extractImaginary, add};
 };
 
 exports.complexNumber = complexNumber;
