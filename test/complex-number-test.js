@@ -1,4 +1,4 @@
-const {complexNumber} = require('../complex-number.js');
+const {complexNumber, add} = require('../complex-number.js');
 const {describe, it} = require('node:test');
 const {strictEqual} = require('assert');
 
@@ -18,7 +18,7 @@ describe("Testing complex-number", function() {
     it("Should add two complex numbers", function() {
       const num1 = complexNumber(1, 2);
       const num2 = complexNumber(3, 5);
-      strictEqual(num1.add(num1, num2), '4 + 7i');
+      strictEqual(add(num1, num2), '4 + 7i');
     })
   })
 });
