@@ -43,4 +43,17 @@ describe("Testing complex-number and it's sub functions", function() {
       });
     });
   });
+  describe("Testing Display", function() {
+    it("Should display negative complex number without real part as it is 0", function() {
+      const num1 = complexNumber(0, -1);
+      const output = complexNumber().display;
+      strictEqual(output(num1), '-1i');
+    })
+
+    it("Should display positive complex number without real part as it is 0", function() {
+      const num1 = complexNumber(0, 1);
+      const output = complexNumber().display;
+      strictEqual(output(num1), '1i');
+    })
+  })
 });

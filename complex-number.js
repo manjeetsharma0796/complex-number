@@ -12,6 +12,7 @@ const complexNumber = function(real, imaginary) {
     const imaginarySum = num1.imaginary() + num2.imaginary();
     number.real = realSum;
     number.imaginary = imaginarySum;
+
     return number;
   };
 
@@ -26,7 +27,13 @@ const complexNumber = function(real, imaginary) {
     return number;
   };
 
-  return {real: extractReal, imaginary: extractImaginary, add, multiply, number};
+  const display = function(number) {
+    if (number.real() === 0) {
+      return `${number.imaginary()}i`;
+    }
+  };
+
+  return {real: extractReal, imaginary: extractImaginary, add, multiply, display};
 };
 
 exports.complexNumber = complexNumber;
