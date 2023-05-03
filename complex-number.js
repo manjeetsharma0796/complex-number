@@ -31,6 +31,13 @@ const complexNumber = function(real, imaginary) {
     if (number.real() === 0) {
       return `${number.imaginary()}i`;
     }
+
+    if(number.imaginary() > 0) {
+      return `${number.real()} +${number.imaginary()}i`;
+    }
+
+    return `${number.real()} ${number.imaginary()}i`;
+
   };
 
   return {real: extractReal, imaginary: extractImaginary, add, multiply, display};

@@ -55,5 +55,17 @@ describe("Testing complex-number and it's sub functions", function() {
       const output = complexNumber().display;
       strictEqual(output(num1), '1i');
     })
+
+    it("Should display positive complex number with positive real", function() {
+      const num1 = complexNumber(1, 1);
+      const output = complexNumber().display;
+      strictEqual(output(num1), '1 +1i');
+    })
+
+    it("Should display negative complex number with positive real", function() {
+      const num1 = complexNumber(1, -1);
+      const output = complexNumber().display;
+      strictEqual(output(num1), '1 -1i');
+    })
   })
 });
