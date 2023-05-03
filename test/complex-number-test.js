@@ -1,4 +1,4 @@
-const {complexNumber, multiply} = require('../complex-number.js');
+const {complexNumber} = require('../complex-number.js');
 const {describe, it} = require('node:test');
 const {strictEqual,deepStrictEqual} = require('assert');
 
@@ -14,12 +14,13 @@ describe("Testing complex-number", function() {
       strictEqual(number.imaginary(), 3);
     });
   });
+
   describe("Testing Add", function() {
     it("Should add two complex numbers", function() {
       const num1 = complexNumber(1, 2);
       const num2 = complexNumber(3, 5);
-      const sum = complexNumber().add;
-      deepStrictEqual(sum(num1, num2), { 
+      const sumResult = complexNumber().add;
+      deepStrictEqual(sumResult(num1, num2), { 
         real: 4,
         imaginary: 7
 
@@ -31,7 +32,11 @@ describe("Testing complex-number", function() {
     it("Should multiply two complex numbers", function() {
       const num1 = complexNumber(2, 3);
       const num2 = complexNumber(1, 2);
-      strictEqual(multiply(num1, num2), '-4 + 7i');
+      const productResult = complexNumber().multiply;
+      deepStrictEqual(productResult(num1, num2), {
+        real: -4,
+        imaginary: 7
+      });
     });
   });
 });

@@ -15,17 +15,18 @@ const complexNumber = function(real, imaginary) {
     return number;
   };
 
-  return {real: extractReal, imaginary: extractImaginary, add, number};
-};
+  const multiply = function(num1, num2) {
+    const realNumMul = num1.real() * num2.real();
+    const pureImaginaryMul = num1.imaginary() * num2.imaginary() * (-1);
+    const semiImaginaryMul1 = num1.real() * num2.imaginary() 
+    const semiImaginaryMul2 = num2.real() * num1.imaginary();
+    number.real = realNumMul + pureImaginaryMul
+    number.imaginary = semiImaginaryMul1 + semiImaginaryMul2;
 
-const multiply = function(num1, num2) {
-  const realNumMul = num1.real() * num2.real();
-  const pureImaginaryMul = num1.imaginary() * num2.imaginary() * (-1);
-  const semiImaginaryMul1 = num1.real() * num2.imaginary() 
-  const semiImaginaryMul2 = num2.real() * num1.imaginary();
+    return number;
+  };
 
-  return `${realNumMul + pureImaginaryMul} + ${semiImaginaryMul1 + semiImaginaryMul2}i`;
+  return {real: extractReal, imaginary: extractImaginary, add, multiply, number};
 };
 
 exports.complexNumber = complexNumber;
-exports.multiply = multiply;
