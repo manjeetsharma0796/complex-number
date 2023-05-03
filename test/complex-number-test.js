@@ -7,7 +7,7 @@ describe("Testing complex-number and it's sub functions", function() {
     const number = complexNumber(2, 3);
 
     it("Should give real part", function() {
-      strictEqual(number.real(), 2);
+      strictEqual(number.getReal(), 2);
     });
   });
 
@@ -15,7 +15,7 @@ describe("Testing complex-number and it's sub functions", function() {
     const number = complexNumber(2, 3);
 
     it("Should give imaginary part", function() {
-      strictEqual(number.imaginary(), 3);
+      strictEqual(number.getImaginary(), 3);
     });
   });
 
@@ -24,8 +24,8 @@ describe("Testing complex-number and it's sub functions", function() {
       const num1 = complexNumber(1, 2);
       const num2 = complexNumber(3, 5);
       const result = num1.add(num2);
-      deepStrictEqual(result.real(), 4) 
-      deepStrictEqual(result.imaginary(), 7)
+      deepStrictEqual(result.getReal(), 4) 
+      deepStrictEqual(result.getImaginary(), 7)
     });
   });
 
@@ -34,34 +34,30 @@ describe("Testing complex-number and it's sub functions", function() {
       const num1 = complexNumber(2, 3);
       const num2 = complexNumber(1, 2);
       const result = num1.multiply(num2);
-      deepStrictEqual(result.real(), -4);
-      deepStrictEqual(result.imaginary(), 7);
+      deepStrictEqual(result.getReal(), -4);
+      deepStrictEqual(result.getImaginary(), 7);
     });
   });
 
   describe("Testing Display", function() {
     it("Should display negative complex number without real part as it is 0", function() {
       const num1 = complexNumber(0, -1);
-      const output = complexNumber().display;
-      strictEqual(output(num1), '-1i');
+      strictEqual(num1.display(), '-1i');
     });
 
     it("Should display positive complex number without real part as it is 0", function() {
       const num1 = complexNumber(0, 1);
-      const output = complexNumber().display;
-      strictEqual(output(num1), '1i');
+      strictEqual(num1.display(), '1i');
     });
 
     it("Should display positive complex number with positive real", function() {
       const num1 = complexNumber(1, 1);
-      const output = complexNumber().display;
-      strictEqual(output(num1), '1 +1i');
+      strictEqual(num1.display(), '1 +1i');
     });
 
     it("Should display negative complex number with positive real", function() {
       const num1 = complexNumber(1, -1);
-      const output = complexNumber().display;
-      strictEqual(output(num1), '1 -1i');
+      strictEqual(num1.display(), '1 -1i');
     });
   });
 });
