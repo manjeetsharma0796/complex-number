@@ -23,12 +23,9 @@ describe("Testing complex-number and it's sub functions", function() {
     it("Should add two complex numbers", function() {
       const num1 = complexNumber(1, 2);
       const num2 = complexNumber(3, 5);
-      const sumResult = complexNumber().add;
-      deepStrictEqual(sumResult(num1, num2), { 
-        real: 4,
-        imaginary: 7
-
-      });
+      const result = num1.add(num2);
+      deepStrictEqual(result.real(), 4) 
+      deepStrictEqual(result.imaginary(), 7)
     });
   });
 
@@ -36,36 +33,35 @@ describe("Testing complex-number and it's sub functions", function() {
     it("Should multiply two complex numbers", function() {
       const num1 = complexNumber(2, 3);
       const num2 = complexNumber(1, 2);
-      const productResult = complexNumber().multiply;
-      deepStrictEqual(productResult(num1, num2), {
-        real: -4,
-        imaginary: 7
-      });
+      const result = num1.multiply(num2);
+      deepStrictEqual(result.real(), -4);
+      deepStrictEqual(result.imaginary(), 7);
     });
   });
+
   describe("Testing Display", function() {
     it("Should display negative complex number without real part as it is 0", function() {
       const num1 = complexNumber(0, -1);
       const output = complexNumber().display;
       strictEqual(output(num1), '-1i');
-    })
+    });
 
     it("Should display positive complex number without real part as it is 0", function() {
       const num1 = complexNumber(0, 1);
       const output = complexNumber().display;
       strictEqual(output(num1), '1i');
-    })
+    });
 
     it("Should display positive complex number with positive real", function() {
       const num1 = complexNumber(1, 1);
       const output = complexNumber().display;
       strictEqual(output(num1), '1 +1i');
-    })
+    });
 
     it("Should display negative complex number with positive real", function() {
       const num1 = complexNumber(1, -1);
       const output = complexNumber().display;
       strictEqual(output(num1), '1 -1i');
-    })
-  })
+    });
+  });
 });
