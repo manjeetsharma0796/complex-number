@@ -2,13 +2,17 @@ const {complexNumber} = require('../complex-number.js');
 const {describe, it} = require('node:test');
 const {strictEqual,deepStrictEqual} = require('assert');
 
-describe("Testing complex-number", function() {
-  describe("Testiing complexNumber and it's sub functions", function() {
+describe("Testing complex-number and it's sub functions", function() {
+  describe("Testiing extractReal", function() {
     const number = complexNumber(2, 3);
 
     it("Should give real part", function() {
       strictEqual(number.real(), 2);
     });
+  });
+
+  describe("Testing extractImaginary", function() {
+    const number = complexNumber(2, 3);
 
     it("Should give imaginary part", function() {
       strictEqual(number.imaginary(), 3);
