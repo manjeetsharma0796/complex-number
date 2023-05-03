@@ -39,25 +39,25 @@ describe("Testing complex-number and it's sub functions", function() {
     });
   });
 
-  describe("Testing Display", function() {
+  describe("Testing toString", function() {
     it("Should display negative complex number without real part as it is 0", function() {
       const num1 = complexNumber(0, -1);
-      strictEqual(num1.display(), '-1i');
+      strictEqual(num1.toString(), '-1i');
     });
 
     it("Should display positive complex number without real part as it is 0", function() {
       const num1 = complexNumber(0, 1);
-      strictEqual(num1.display(), '1i');
+      strictEqual(num1.toString(), '1i');
     });
 
     it("Should display positive complex number with positive real", function() {
       const num1 = complexNumber(1, 1);
-      strictEqual(num1.display(), '1 +1i');
+      strictEqual(num1.toString(), '1 +1i');
     });
 
     it("Should display negative complex number with positive real", function() {
       const num1 = complexNumber(1, -1);
-      strictEqual(num1.display(), '1 -1i');
+      strictEqual(num1.toString(), '1 -1i');
     });
   });
 });

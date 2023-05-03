@@ -8,24 +8,23 @@ const complexNumber = function(real, imaginary) {
   };
 
   const add = function(addend) {
-    const addendReal = addend.getReal();
-    const addendImaginary = addend.getImaginary();
-    const realSum = real + addendReal;
-    const imaginarySum = imaginary + addendImaginary;
-    return complexNumber(realSum, imaginarySum);
+    const realSum = real + addend.getReal();
+    const imaginarySum = imaginary + addend.getImaginary();
 
+    return complexNumber(realSum, imaginarySum);
   };
 
   const multiply = function(multiplier) {
     const multiplierReal = multiplier.getReal();
     const multiplierImaginary = multiplier.getImaginary();
-    const realSum = real * multiplierReal + imaginary * multiplierImaginary * (-1);
+
+    const realSum = real * multiplierReal - imaginary * multiplierImaginary;
     const imaginarySum = real * multiplierImaginary +  multiplierReal * imaginary;
 
     return complexNumber(realSum, imaginarySum);
   };
 
-  const display = function() {
+  const toString = function() {
     if (real === 0) {
       return `${imaginary}i`;
     }
@@ -38,7 +37,7 @@ const complexNumber = function(real, imaginary) {
 
   };
 
-  return {getReal, getImaginary, add, multiply, display};
+  return {getReal, getImaginary, add, multiply, toString};
 };
 
 exports.complexNumber = complexNumber;
