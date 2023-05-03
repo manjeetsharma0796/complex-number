@@ -1,20 +1,21 @@
 const complexNumber = function(real, imaginary) {
-  const numbers = {real, imaginary}
+  const number = {real, imaginary}
   const extractReal = function() {
-    return numbers.real;
+    return number.real;
   };
   const extractImaginary = function() {
-    return numbers.imaginary;
+    return number.imaginary;
   };
 
-  return {real: extractReal, imaginary: extractImaginary};
-};
+  const add = function(num1, num2) {
+    const realSum = num1.real() + num2.real();
+    const imaginarySum = num1.imaginary() + num2.imaginary();
+    number.real = realSum;
+    number.imaginary = imaginarySum;
+    return number;
+  };
 
-const add = function(num1, num2) {
-  const realSum = num1.real() + num2.real();
-  const imaginarySum = num1.imaginary() + num2.imaginary();
-
-  return `${realSum} + ${imaginarySum}i`;
+  return {real: extractReal, imaginary: extractImaginary, add, number};
 };
 
 const multiply = function(num1, num2) {
@@ -27,5 +28,4 @@ const multiply = function(num1, num2) {
 };
 
 exports.complexNumber = complexNumber;
-exports.add = add;
 exports.multiply = multiply;
