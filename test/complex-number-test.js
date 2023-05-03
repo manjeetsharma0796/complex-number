@@ -1,4 +1,4 @@
-const {complexNumber} = require('../complex-number.js');
+const {complexNumber} = require('../src/complex-number.js');
 const {describe, it} = require('node:test');
 const {strictEqual,deepStrictEqual} = require('assert');
 
@@ -52,12 +52,17 @@ describe("Testing complex-number and it's sub functions", function() {
 
     it("Should display positive complex number with positive real", function() {
       const num1 = complexNumber(1, 1);
-      strictEqual(num1.toString(), '1 +1i');
+      strictEqual(num1.toString(), '1 + 1i');
     });
 
     it("Should display negative complex number with positive real", function() {
       const num1 = complexNumber(1, -1);
-      strictEqual(num1.toString(), '1 -1i');
+      strictEqual(num1.toString(), '1 - 1i');
+    });
+
+    it("Should display real number only as imaginary is zero", function() {
+      const num1 = complexNumber(1, 0);
+      strictEqual(num1.toString(), '1');
     });
   });
 });

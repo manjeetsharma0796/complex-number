@@ -25,15 +25,16 @@ const complexNumber = function(real, imaginary) {
   };
 
   const toString = function() {
+    if(imaginary === 0) {
+      return `${real}`;
+    }
+
     if (real === 0) {
       return `${imaginary}i`;
     }
 
-    if(imaginary > 0) {
-      return `${real} +${imaginary}i`;
-    }
-
-    return `${real} ${imaginary}i`;
+    const operator = (imaginary < 0) ? '-' : '+';
+    return `${real} ${operator} ${Math.abs(imaginary)}i`;
 
   };
 
