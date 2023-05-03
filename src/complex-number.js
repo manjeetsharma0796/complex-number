@@ -34,8 +34,8 @@ const complexNumber = function(real, imaginary) {
     }
 
     const operator = (imaginary < 0) ? '-' : '+';
-    return `${real} ${operator} ${Math.abs(imaginary)}i`;
 
+    return `${real} ${operator} ${Math.abs(imaginary)}i`;
   };
 
   return {getReal, getImaginary, add, multiply, toString};
